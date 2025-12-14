@@ -38,5 +38,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   my_new_project:
     # Applies to all files under models/example/
-    jaffle_shop:
-      +materialized: table
+    marts:
+      +materialized: table # so that it is readily available for BI Tools
+
+    staging:
+      +materialized: view # so that it gets rebuilt using new data each time the query runs
