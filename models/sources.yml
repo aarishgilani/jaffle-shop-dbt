@@ -9,4 +9,10 @@ sources:
       - name: orders
         description: One record per order. Includes canclled and deleted orders.
 
-  
+  - name: payments
+    description: This is the replica of the schema used by the payment processor.
+    database: raw
+    schema: stripe
+    tables:
+      - name: payments
+        description: One record per transaction
